@@ -15,15 +15,15 @@ namespace REVIT_API_TUTORIAL_NVH
         public Result OnStartup(UIControlledApplication application)
         {
             //Create The Plugin Tab.
-            application.CreateRibbonTab("CAD To Revit");
+            application.CreateRibbonTab("Revit API Tutorial");
 
             #region Load the file path
             //Create The Plugin Panel.
-            RibbonPanel Panel = application.CreateRibbonPanel("CAD To Revit", "Architecture");
+            RibbonPanel Panel = application.CreateRibbonPanel("Revit API Tutorial", "Filtering");
             Assembly assembly = Assembly.GetExecutingAssembly();
 
             //Create The Plugin Button.
-            PushButtonData Button4 = new PushButtonData("Button4", "Load file", assembly.Location, "REVIT_API_TUTORIAL_NVH.LoadFile");
+            PushButtonData Button4 = new PushButtonData("btn_Loc1", "Get all Walls", assembly.Location, "REVIT_API_TUTORIAL_NVH.Cmd_GetAllWalls");
             PushButton pushButton4 = Panel.AddItem(Button4) as PushButton;
 
             Uri UriPath4 = new Uri("pack://application:,,,/REVIT_API_TUTORIAL_NVH;component/PluginIcons/LoadFile.png");
@@ -42,16 +42,6 @@ namespace REVIT_API_TUTORIAL_NVH
             Uri UriPath1 = new Uri("pack://application:,,,/REVIT_API_TUTORIAL_NVH;component/PluginIcons/Grids.png");
             BitmapImage Image1 = new BitmapImage(UriPath1);
             pushButton1.LargeImage = Image1;
-            #endregion
-
-            #region Create The Walls
-            //Create The Plugin Button.
-            PushButtonData Button2 = new PushButtonData("Button2", "Draw Walls", assembly.Location, "REVIT_API_TUTORIAL_NVH.CreateWalls");
-            PushButton pushButton2 = Panel.AddItem(Button2) as PushButton;
-
-            Uri UriPath2 = new Uri("pack://application:,,,/REVIT_API_TUTORIAL_NVH;component/PluginIcons/Walls.png");
-            BitmapImage Image2 = new BitmapImage(UriPath2);
-            pushButton2.LargeImage = Image2;
             #endregion
 
             #region Create The Floor

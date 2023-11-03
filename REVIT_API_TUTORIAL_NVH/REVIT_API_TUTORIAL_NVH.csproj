@@ -73,6 +73,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command\Filtering\Cmd_GetAllWalls.cs" />
     <Compile Include="CreateFloor.cs" />
     <Compile Include="CreateGrids.cs" />
     <Compile Include="ExternalCommands\ExternalApplication.cs" />
